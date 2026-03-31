@@ -2,6 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 
+const BASE_PATH = process.env.NODE_ENV === "production" ? "/mytabi-mediakit" : "";
+
 function useInView(threshold = 0.15) {
   const ref = useRef<HTMLDivElement>(null);
   const [isInView, setIsInView] = useState(false);
@@ -163,7 +165,7 @@ function Hero() {
         <div className="mb-8">
           <div className="w-32 h-32 mx-auto rounded-full border-4 border-cream-200/60 overflow-hidden shadow-2xl mb-6">
             <img
-              src="/profile-2.jpg"
+              src={`${BASE_PATH}/profile-2.jpg`}
               alt="myTabi プロフィール"
               className="w-full h-full object-cover"
             />
@@ -288,14 +290,14 @@ function About() {
             <div className="grid grid-cols-5 gap-4">
               <div className="col-span-3 row-span-2">
                 <img
-                  src="/profile-2.jpg"
+                  src={`${BASE_PATH}/profile-2.jpg`}
                   alt="myTabi"
                   className="rounded-2xl shadow-xl w-full h-full object-cover border-2 border-cream-200"
                 />
               </div>
               <div className="col-span-2">
                 <img
-                  src="/profile-1.jpg"
+                  src={`${BASE_PATH}/profile-1.jpg`}
                   alt="myTabi 着物"
                   className="rounded-2xl shadow-lg w-full h-48 object-cover border-2 border-cream-200"
                 />
@@ -763,7 +765,7 @@ function Thoughts() {
             <div className="flex justify-center mb-8">
               <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-forest-200">
                 <img
-                  src="/profile-2.jpg"
+                  src={`${BASE_PATH}/profile-2.jpg`}
                   alt="myTabi"
                   className="w-full h-full object-cover"
                 />
