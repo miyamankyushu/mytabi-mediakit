@@ -1,0 +1,177 @@
+@import "tailwindcss";
+
+@theme {
+  /* Ghibli-inspired warm earth palette */
+  --color-cream-50: #fefcf7;
+  --color-cream-100: #faf6ee;
+  --color-cream-200: #f3ece0;
+  --color-cream-300: #e8ddd0;
+  --color-cream-400: #d5c8b5;
+
+  --color-forest-50: #f2f7f3;
+  --color-forest-100: #dceade;
+  --color-forest-200: #b8d4bb;
+  --color-forest-300: #89b88f;
+  --color-forest-400: #5e9966;
+  --color-forest-500: #4a7c59;
+  --color-forest-600: #3a6347;
+  --color-forest-700: #2e4f39;
+  --color-forest-800: #243d2d;
+  --color-forest-900: #1a2e21;
+
+  --color-earth-50: #faf5f0;
+  --color-earth-100: #f0e6d8;
+  --color-earth-200: #e0ccb2;
+  --color-earth-300: #c9a97e;
+  --color-earth-400: #b8925e;
+  --color-earth-500: #a07a45;
+  --color-earth-600: #896538;
+  --color-earth-700: #6e502d;
+  --color-earth-800: #563e24;
+  --color-earth-900: #3d2d1a;
+
+  --color-bark-50: #f7f3f0;
+  --color-bark-100: #ebe3dc;
+  --color-bark-200: #d4c5b8;
+  --color-bark-300: #b8a08a;
+  --color-bark-400: #9c7d65;
+  --color-bark-500: #7a5f49;
+  --color-bark-600: #5e4837;
+  --color-bark-700: #47362a;
+  --color-bark-800: #3d3229;
+  --color-bark-900: #2a2119;
+
+  --color-sky-50: #f5f9fc;
+  --color-sky-100: #e3eff7;
+  --color-sky-200: #c5dded;
+  --color-sky-300: #9ec4de;
+  --color-sky-400: #72a8cc;
+  --color-sky-500: #5590b8;
+
+  --color-terracotta-50: #fdf5ef;
+  --color-terracotta-100: #f8e6d4;
+  --color-terracotta-200: #f0c9a4;
+  --color-terracotta-300: #e4a66e;
+  --color-terracotta-400: #d48a47;
+  --color-terracotta-500: #c17444;
+  --color-terracotta-600: #a35c34;
+
+  --font-family-sans: "Inter", "Noto Sans JP", system-ui, sans-serif;
+  --font-family-serif: "Playfair Display", "Noto Serif JP", Georgia, serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-cream-50);
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes count-up {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slide-in-left {
+  from { opacity: 0; transform: translateX(-40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slide-in-right {
+  from { opacity: 0; transform: translateX(40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes sway {
+  0%, 100% { transform: rotate(-2deg); }
+  50% { transform: rotate(2deg); }
+}
+
+@keyframes drift {
+  0% { transform: translateX(0) translateY(0); }
+  33% { transform: translateX(10px) translateY(-5px); }
+  66% { transform: translateX(-5px) translateY(3px); }
+  100% { transform: translateX(0) translateY(0); }
+}
+
+@keyframes hero-ken-burns {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.06); }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out forwards;
+}
+.animate-fade-in {
+  animation: fade-in 1s ease-out forwards;
+}
+.animate-count-up {
+  animation: count-up 0.6s ease-out forwards;
+}
+.animate-slide-in-left {
+  animation: slide-in-left 0.8s ease-out forwards;
+}
+.animate-slide-in-right {
+  animation: slide-in-right 0.8s ease-out forwards;
+}
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+.animate-sway {
+  animation: sway 6s ease-in-out infinite;
+}
+.animate-drift {
+  animation: drift 8s ease-in-out infinite;
+}
+.animate-ken-burns {
+  animation: hero-ken-burns 25s ease-out forwards;
+}
+
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+.delay-600 { animation-delay: 0.6s; }
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Ghibli-style watercolor texture overlay */
+.watercolor-bg {
+  background-image:
+    radial-gradient(ellipse at 20% 50%, rgba(74, 124, 89, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(212, 138, 71, 0.05) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(158, 196, 222, 0.05) 0%, transparent 50%);
+}
+
+.ghibli-divider {
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--color-forest-300) 20%,
+    var(--color-earth-300) 50%,
+    var(--color-forest-300) 80%,
+    transparent 100%
+  );
+  border: none;
+  opacity: 0.5;
+}
